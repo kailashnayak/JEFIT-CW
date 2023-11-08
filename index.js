@@ -82,7 +82,6 @@ if(window.matchMedia('(min-width: 769px)').matches && scrollPosition > 960 )
   
 
   const loginLink = document.getElementById("login-link");
-  
   const loginForm = document.getElementById("login-form");
   const loginButton = document.getElementById("login-button");
   const usernameInput = document.getElementById("username");
@@ -92,6 +91,30 @@ if(window.matchMedia('(min-width: 769px)').matches && scrollPosition > 960 )
       loginForm.style.display = "block";
   });
   
+  const loginLink1 = document.querySelector(".sBtn");
+  const loginForm1 = document.querySelector("#login-form");
+  const loginButton1 = document.getElementById("login-button");
+  const usernameInput1 = document.getElementById("username");
+  const passwordInput1 = document.getElementById("password");
+  
+  loginLink1.addEventListener("click", function () {
+      loginForm1.style.display = "block";
+  });
+
+  loginButton1.addEventListener("click", function () {
+    if (usernameInput.value === "" || passwordInput.value === "") {
+        alert("Please enter both username and password.");
+    } else {
+        alert("Login Successful");
+        loginForm.style.display = "none";
+      
+        usernameInput.value = "";
+        passwordInput.value = "";
+    }
+});
+
+
+
   loginButton.addEventListener("click", function () {
       if (usernameInput.value === "" || passwordInput.value === "") {
           alert("Please enter both username and password.");
